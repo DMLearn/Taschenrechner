@@ -1,9 +1,5 @@
 #Taschenrechner_Iteration_1
 
-User Story für den Taschenrechner:
----------------------------------
----------------------------------
-
 Titel: Addieren 
 ---------------
 Story: Als Benutzer möchte ich zwei Zahlen eingeben und deren Summanden berechnen lassen.
