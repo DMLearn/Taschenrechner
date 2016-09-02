@@ -39,12 +39,12 @@ namespace Taschenrechner_Iteration_1
 
             catch (FormatException)
             {
-                Console.WriteLine("Die Eingabe entspricht nicht einem Int32-Format.");
+                Console.WriteLine("Die Eingabe entspricht nicht einem Zahlenformat.");
                 Console.ReadKey();
             }
             catch (OverflowException)
             {
-                Console.WriteLine("Die Eingabe ist größer als der maximale Int32-Wert.");
+                Console.WriteLine("Die Eingabe ist größer als der maximale mögliche Zahlenwert.");
                 Console.ReadKey();
             }
 
