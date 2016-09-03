@@ -15,11 +15,6 @@ namespace Taschenrechner_Iteration_1
             //Beenden:  Als Benutzer möchte ich die Anwendung zuverlässig beenden können.
             //Starten:  Als Benutzer möchte ich, dass das Programm schnell startet damit schnell und effizient arbeiten kann.
 
-            //worker = new BackgroundWorker();
-            /*worker.DoWork += worker_DoWork;
-            worker.WorkerReportsProgress = true;
-            worker.RunWorkerAsync();*/
-
             try
             {
                 //User Story: Werte addieren
@@ -49,24 +44,6 @@ namespace Taschenrechner_Iteration_1
             }
 
         }
-        /// <summary>
-        /// Check for cancelation by the user
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /*static void worker_DoWork (object sender, DoWorkEventArgs e)
-        {
-            if (Console.ReadKey(true).Key == ConsoleKey.Escape)
-            {
-                Console.WriteLine("\n------------------------------------------");
-                Console.WriteLine("Programm wurde durch den Anwender beendet!");
-                Console.WriteLine("Taste drücken um das Programm zu verlassen.");
-                Console.ReadKey();
-                System.Environment.Exit(0);
-            }
-        }*/
-
-
 
     }
 }
