@@ -1,0 +1,45 @@
+User Story für den Taschenrechner:
+----------------------------------
+----------------------------------
+
+
+Titel: Addieren 
+---------------
+
+Story: Als Benutzer möchte ich zwei Zahlen eingeben und deren Summanden berechnen lassen.
+
+Akzeptanzkriterien: 
+• Zahlen im Bereich von -1000,00 bis 1000,00 können addiert werden 
+
+Status: 
+• implementiert
+• getestet
+• erledigt
+
+
+Titel: Beenden
+--------------
+
+Story: Als Benutzer möchte ich die Anwendung zuverlässig beenden können.
+
+Akzeptanzkriterien: 
+• Abbruch muss zu jedem Zeitpunkt des Programmstatus möglich sein
+• Abbruch Zeichen "Esc-Taste"
+
+Status:
+• offen
+
+
+Titel: Starten
+--------------
+
+Story: Als Benutzer möchte ich, dass das Programm schnell startet damit schnell und effizient arbeiten kann.
+
+Akzeptanzkriterien: 
+• Programm startet innerhalb von 2 Sekunden
+• Programm kann auf Windows 10 ohne zusätzliche Anwendungen ausgeführt werden
+
+Status: 
+• implementiert
+• getestet
+• erledigt
