@@ -2,7 +2,7 @@
 using System.Threading;
 using System.ComponentModel;
 
-namespace Taschenrechner_Iteration_1
+namespace Taschenrechner
 {
     class Program
     {
