@@ -19,17 +19,18 @@ namespace Taschenrechner
             {
                 //User Story: Werte addieren
                 Console.Write("Erste Zahl eingeben: ");
-                float erste_zahl = Convert.ToSingle(Console.ReadLine());
+                double erste_zahl = Convert.ToDouble(Console.ReadLine());
 
                 //Wandel von Text zu Gleitkommazahlen
                 Console.Write("Zweite Zahl eingeben: ");
-                float zweite_zahl = Convert.ToSingle(Console.ReadLine());
+                double zweite_zahl = Convert.ToDouble(Console.ReadLine());
 
                 //Wandel von Text zu Gleitkommazahlen
-                float ergebniss = erste_zahl + zweite_zahl;
+                double ergebniss = AddierenZweierZahlen(erste_zahl, zweite_zahl);
                 Console.WriteLine("Das Ergebniss aus {0} + {1} = {2}", erste_zahl, zweite_zahl, ergebniss);
 
-                Console.ReadKey();
+                WarteAufBenutzerEingabe();
+
             }
 
             catch (FormatException)
@@ -43,6 +44,27 @@ namespace Taschenrechner
                 Console.ReadKey();
             }
 
+        }
+
+        /// <summary>
+        /// Funktion wartet bis der Benutzer eine Taste betätigt hat.
+        /// </summary>
+        static void WarteAufBenutzerEingabe()
+        {
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("Zum Beenden bitte eine Taste drücken!");
+            Console.ReadLine();
+        }
+
+        /// <summary>
+        /// Methode addiert zwei Zahlen.
+        /// </summary>
+        /// <param name="erste_zahl"></param>
+        /// <param name="zweite_zahl"></param>
+        static double AddierenZweierZahlen(double erste_zahl, double zweite_zahl )
+        {
+            double summe = erste_zahl + zweite_zahl;
+            return summe;
         }
 
     }
