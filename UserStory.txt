@@ -2,6 +2,31 @@ User Story für den Taschenrechner:
 ----------------------------------
 ----------------------------------
 
+User Story Vorlage: Als <Rolle/Anwendertyp> möchte ich  <Ziel/Wunsch/Funktion>, um <Nutzen>.
+ 
+
+ Titel:Softwarestruktur
+---------------
+
+Story: Als Entwickler möchte ich den Quellcode suaber strukturieren, um später weiter Funktionalitäten 
+hinzufügen zu können.
+
+Akzeptanzkriterien: 
+• Das "Single Level of Abstraction" Prinzip wird eingehalten, oder ein Abweichung ist begründet und dokumentiert.
+
+Status: 
+• offen
+
+Titel: Subtrahieren
+---------------
+
+Story: Als Benutzer möchte ich zwei Zahlen eingeben und deren Differenz berechnen lassen.
+
+Akzeptanzkriterien: 
+• Zahlen im Bereich von -1000,00 bis 1000,00 können subtrahiert werden 
+
+Status: 
+• offen
 
 Titel: Addieren 
 ---------------
@@ -15,20 +40,6 @@ Status:
 • implementiert
 • getestet
 • erledigt
-
-
-Titel: Beenden
---------------
-
-Story: Als Benutzer möchte ich die Anwendung zuverlässig beenden können.
-
-Akzeptanzkriterien: 
-• Abbruch muss zu jedem Zeitpunkt des Programmstatus möglich sein
-• Abbruch Zeichen "Esc-Taste"
-
-Status:
-• offen
-
 
 Titel: Starten
 --------------
