@@ -15,7 +15,8 @@ Akzeptanzkriterien:
 • Das "Single Level of Abstraction" Prinzip wird eingehalten, oder ein Abweichung ist begründet und dokumentiert.
 
 Status: 
-• offen
+• umgesetzt
+• erledigt
 
 Titel: Subtrahieren
 ---------------

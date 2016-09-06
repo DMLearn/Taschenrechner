@@ -6,30 +6,40 @@ namespace Taschenrechner
 {
     class Program
     {
-
-        private static BackgroundWorker worker = new BackgroundWorker();
-        
+      
         static void Main(string[] args)
         {
-            //Addieren: Als Benutzer möchte ich zwei Zahlen eingeben und deren Summanden berechnen lassen.
-            //Beenden:  Als Benutzer möchte ich die Anwendung zuverlässig beenden können.
-            //Starten:  Als Benutzer möchte ich, dass das Programm schnell startet damit schnell und effizient arbeiten kann.
-
+            
             try
             {
                 //User Story: Werte addieren
-                Console.Write("Erste Zahl eingeben: ");
-                double erste_zahl = Convert.ToDouble(Console.ReadLine());
+                string ersteZahlAlsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
+                string zweiteZahlAlsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
+                string operation = HoleBenutzerEingabe("Bitte gib die Operation ein (+ oder -): ");
 
                 //Wandel von Text zu Gleitkommazahlen
-                Console.Write("Zweite Zahl eingeben: ");
-                double zweite_zahl = Convert.ToDouble(Console.ReadLine());
+                //TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
+                double ersteZahlAlsDouble = Convert.ToDouble(ersteZahlAlsString);
+                double zweiteZahlAlsDouble = Convert.ToDouble(zweiteZahlAlsString);
 
-                //Wandel von Text zu Gleitkommazahlen
-                double ergebniss = AddierenZweierZahlen(erste_zahl, zweite_zahl);
-                Console.WriteLine("Das Ergebniss aus {0} + {1} = {2}", erste_zahl, zweite_zahl, ergebniss);
+                double resultat = 0;
+                if (operation == "+")
+                {
+                    resultat = AddierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
+                    Console.WriteLine("Das Ergebniss aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
+                }
+                else if (operation == "-")
+                {
+                    resultat = SubtrahierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
+                    Console.WriteLine("Das Ergebniss aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
+                }
+                else
+                {
+                    Console.WriteLine("Du hast ein falsche Auswahl der Operation ausgewählt.");
+                }
 
-                WarteAufBenutzerEingabe();
+
+                HoleBenutzerEingabe("-------------------------------------\nZum Beenden bitte eine Taste drücken!");
 
             }
 
@@ -47,13 +57,16 @@ namespace Taschenrechner
         }
 
         /// <summary>
-        /// Funktion wartet bis der Benutzer eine Taste betätigt hat.
+        /// Eingabeforderung an den Nutzer, Eingabe wird als return zurürck gegeben.
         /// </summary>
-        static void WarteAufBenutzerEingabe()
+        /// <param name="ausgabetext"></param>
+        /// <returns></returns>
+        static string HoleBenutzerEingabe(string ausgabetext)
         {
-            Console.WriteLine("-------------------------------------");
-            Console.WriteLine("Zum Beenden bitte eine Taste drücken!");
-            Console.ReadLine();
+            Console.Write(ausgabetext);
+            string summand = Console.ReadLine();
+
+            return summand;
         }
 
         /// <summary>
@@ -65,6 +78,18 @@ namespace Taschenrechner
         {
             double summe = erste_zahl + zweite_zahl;
             return summe;
+        }
+
+        /// <summary>
+        /// Methode subtrahiert zwei Zahlen.
+        /// </summary>
+        /// <param name="erste_zahl"></param>
+        /// <param name="zweite_zahl"></param>
+        /// <returns></returns>
+        static double SubtrahierenZweierZahlen(double erste_zahl, double zweite_zahl)
+        {
+            double differenz = erste_zahl - zweite_zahl;
+            return differenz;
         }
 
     }
