@@ -23,21 +23,26 @@ namespace Taschenrechner
                 double zweiteZahlAlsDouble = Convert.ToDouble(zweiteZahlAlsString);
 
                 double resultat = 0;
-                if (operation == "+")
-                {
-                    resultat = AddierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
-                    Console.WriteLine("Das Ergebniss aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
-                }
-                else if (operation == "-")
-                {
-                    resultat = SubtrahierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
-                    Console.WriteLine("Das Ergebniss aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
-                }
-                else
-                {
-                    Console.WriteLine("Du hast ein falsche Auswahl der Operation ausgewählt.");
-                }
 
+                switch(operation)
+                {
+                    case "+":
+                        resultat = AddierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
+                        Console.WriteLine("Das Ergebniss aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
+                        break;
+                    case "-":
+                        resultat = SubtrahierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
+                        Console.WriteLine("Das Ergebniss aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
+                        break;
+                    case "*":
+                    case "/":
+                        Console.WriteLine("Diese Operation wird bald unterstützt.");
+                        break;
+
+                    default: 
+                        Console.WriteLine("Du hast ein falsche Auswahl der Operation ausgewählt.");
+                        break;
+                }
 
                 HoleBenutzerEingabe("-------------------------------------\nZum Beenden bitte eine Taste drücken!");
 
