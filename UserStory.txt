@@ -18,6 +18,32 @@ Status:
 • umgesetzt
 • erledigt
 
+Titel: Dividieren
+---------------
+
+Story: Als Benutzer möchte ich zwei Zahlen eingeben und deren Quotient berechnen lassen.
+
+Akzeptanzkriterien: 
+• Zahlen im Bereich von -1000,00 bis 1000,00 können subtrahiert werden 
+
+Status: 
+• implementiert
+• getestet
+• erledigt
+
+Titel: Multiplizieren
+---------------
+
+Story: Als Benutzer möchte ich zwei Zahlen eingeben und deren Produkt berechnen lassen.
+
+Akzeptanzkriterien: 
+• Zahlen im Bereich von -1000,00 bis 1000,00 können subtrahiert werden 
+
+Status: 
+• implementiert
+• getestet
+• erledigt
+
 Titel: Subtrahieren
 ---------------
 
@@ -27,7 +53,9 @@ Akzeptanzkriterien:
 • Zahlen im Bereich von -1000,00 bis 1000,00 können subtrahiert werden 
 
 Status: 
-• offen
+• implementiert
+• getestet
+• erledigt
 
 Titel: Addieren 
 ---------------

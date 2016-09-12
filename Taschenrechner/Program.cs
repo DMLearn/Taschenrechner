@@ -15,7 +15,7 @@ namespace Taschenrechner
                 //User Story: Werte addieren
                 string ersteZahlAlsString = HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
                 string zweiteZahlAlsString = HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
-                string operation = HoleBenutzerEingabe("Bitte gib die Operation ein (+ oder -): ");
+                string operation = HoleBenutzerEingabe("Bitte gib die Operation ein (+ - * /): ");
 
                 //Wandel von Text zu Gleitkommazahlen
                 //TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
@@ -28,15 +28,19 @@ namespace Taschenrechner
                 {
                     case "+":
                         resultat = AddierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
-                        Console.WriteLine("Das Ergebniss aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
+                        Console.WriteLine("Das Ergebnis aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
                         break;
                     case "-":
                         resultat = SubtrahierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
-                        Console.WriteLine("Das Ergebniss aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
+                        Console.WriteLine("Das Ergebnis aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
                         break;
                     case "*":
+                        resultat = MultiplizierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
+                        Console.WriteLine("Das Ergebnis aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
+                        break;
                     case "/":
-                        Console.WriteLine("Diese Operation wird bald unterstützt.");
+                        resultat = DividierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
+                        Console.WriteLine("Das Ergebnis aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
                         break;
 
                     default: 
@@ -69,9 +73,9 @@ namespace Taschenrechner
         static string HoleBenutzerEingabe(string ausgabetext)
         {
             Console.Write(ausgabetext);
-            string summand = Console.ReadLine();
+            string input = Console.ReadLine();
 
-            return summand;
+            return input;
         }
 
         /// <summary>
@@ -97,5 +101,28 @@ namespace Taschenrechner
             return differenz;
         }
 
+        /// <summary>
+        /// Methode multipliziert zwei Zahlen
+        /// </summary>
+        /// <param name="erste_zahl"></param>
+        /// <param name="zweite_zahl"></param>
+        /// <returns></returns>
+        static double MultiplizierenZweierZahlen(double erste_zahl, double zweite_zahl)
+        {
+            double produkt = erste_zahl * zweite_zahl;
+            return produkt;
+        }
+
+        /// <summary>
+        /// Methode dividiert zwei Zahlen
+        /// </summary>
+        /// <param name="erste_zahl"></param>
+        /// <param name="zweite_zahl"></param>
+        /// <returns></returns>
+        static double DividierenZweierZahlen(double erste_zahl, double zweite_zahl)
+        {
+            double quotient = erste_zahl / zweite_zahl;
+            return quotient;
+        }
     }
 }
