@@ -18,36 +18,13 @@ namespace Taschenrechner
                 string operation = HoleBenutzerEingabe("Bitte gib die Operation ein (+ - * /): ");
 
                 //Wandel von Text zu Gleitkommazahlen
-                //TODO: Auslagern in Methode, wenn Struktur umfangreicher geworden ist.
                 double ersteZahlAlsDouble = Convert.ToDouble(ersteZahlAlsString);
                 double zweiteZahlAlsDouble = Convert.ToDouble(zweiteZahlAlsString);
 
                 double resultat = 0;
+                resultat = Berechnung(ersteZahlAlsDouble, zweiteZahlAlsDouble, operation);
 
-                switch(operation)
-                {
-                    case "+":
-                        resultat = AddierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
-                        Console.WriteLine("Das Ergebnis aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
-                        break;
-                    case "-":
-                        resultat = SubtrahierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
-                        Console.WriteLine("Das Ergebnis aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
-                        break;
-                    case "*":
-                        resultat = MultiplizierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
-                        Console.WriteLine("Das Ergebnis aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
-                        break;
-                    case "/":
-                        resultat = DividierenZweierZahlen(ersteZahlAlsDouble, zweiteZahlAlsDouble);
-                        Console.WriteLine("Das Ergebnis aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
-                        break;
-
-                    default: 
-                        Console.WriteLine("Du hast ein falsche Auswahl der Operation ausgewählt.");
-                        break;
-                }
-
+                Console.WriteLine("Das Ergebnis aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
                 HoleBenutzerEingabe("-------------------------------------\nZum Beenden bitte eine Taste drücken!");
 
             }
@@ -79,11 +56,44 @@ namespace Taschenrechner
         }
 
         /// <summary>
+        /// Methode ruft die Berchnungsmethode für die jeweilige Operation auf
+        /// </summary>
+        /// <param name="erste_zahl"></param>
+        /// <param name="zweite_zahl"></param>
+        /// <param name="operation"></param>
+        /// <returns></returns>
+        static double Berechnung(double erste_zahl, double zweite_zahl, string operation)
+        {
+            double resultat = 0;
+
+            switch (operation)
+            {
+                case "+":
+                    resultat = AddierenZweierZahlen(erste_zahl, zweite_zahl);
+                    break;
+                case "-":
+                    resultat = SubtrahierenZweierZahlen(erste_zahl, zweite_zahl);
+                    break;
+                case "*":
+                    resultat = MultiplizierenZweierZahlen(erste_zahl, zweite_zahl);
+                    break;
+                case "/":
+                    resultat = DividierenZweierZahlen(erste_zahl, zweite_zahl);
+                    break;
+                default:
+                    resultat = 0;
+                    break;
+            }
+
+            return resultat;
+        }
+
+        /// <summary>
         /// Methode addiert zwei Zahlen.
         /// </summary>
         /// <param name="erste_zahl"></param>
         /// <param name="zweite_zahl"></param>
-        static double AddierenZweierZahlen(double erste_zahl, double zweite_zahl )
+        static double AddierenZweierZahlen(double erste_zahl, double zweite_zahl)
         {
             double summe = erste_zahl + zweite_zahl;
             return summe;
@@ -124,5 +134,7 @@ namespace Taschenrechner
             double quotient = erste_zahl / zweite_zahl;
             return quotient;
         }
+
+
     }
 }
