@@ -22,9 +22,9 @@ namespace Taschenrechner
 
             //Berechnung ausführen
             RechnerModel model = new RechnerModel();
-            double resultat = model.Berechne(ersteZahlAlsDouble, zweiteZahlAlsDouble, operation);
+            model.Berechne(ersteZahlAlsDouble, zweiteZahlAlsDouble, operation);
 
-            Console.WriteLine("Das Ergebnis aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, resultat, operation);
+            Console.WriteLine("Das Ergebnis aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, model.Resultat, operation);
             HoleBenutzerEingabe("-------------------------------------\nZum Beenden bitte eine Taste drücken!");
 
         }

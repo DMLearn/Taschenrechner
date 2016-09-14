@@ -8,6 +8,15 @@ namespace Taschenrechner
 {
     class RechnerModel
     {
+        //Eigenschaft für das Attribut Resultat
+        public double Resultat { get; private set; }
+        
+        //Konstruktur für das Objekt RechnerModel
+        public RechnerModel()
+        {
+            Resultat = 0;
+        }
+
 
         /// <summary>
         /// Methode ruft die Berchnungsmethode für die jeweilige Operation auf
@@ -16,30 +25,27 @@ namespace Taschenrechner
         /// <param name="zweite_zahl"></param>
         /// <param name="operation"></param>
         /// <returns></returns>
-        public double Berechne(double erste_zahl, double zweite_zahl, string operation)
+        public void Berechne(double erste_zahl, double zweite_zahl, string operation)
         {
-            double resultat = 0;
-
             switch (operation)
             {
                 case "+":
-                    resultat = AddierenZweierZahlen(erste_zahl, zweite_zahl);
+                    Resultat = AddierenZweierZahlen(erste_zahl, zweite_zahl);
                     break;
                 case "-":
-                    resultat = SubtrahierenZweierZahlen(erste_zahl, zweite_zahl);
+                    Resultat = SubtrahierenZweierZahlen(erste_zahl, zweite_zahl);
                     break;
                 case "*":
-                    resultat = MultiplizierenZweierZahlen(erste_zahl, zweite_zahl);
+                    Resultat = MultiplizierenZweierZahlen(erste_zahl, zweite_zahl);
                     break;
                 case "/":
-                    resultat = DividierenZweierZahlen(erste_zahl, zweite_zahl);
+                    Resultat = DividierenZweierZahlen(erste_zahl, zweite_zahl);
                     break;
                 default:
-                    resultat = 0;
+                    Resultat = 0;
                     break;
             }
 
-            return resultat;
         }
 
         /// <summary>
