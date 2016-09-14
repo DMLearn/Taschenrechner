@@ -8,7 +8,7 @@ namespace Taschenrechner
 {
     class RechnerModel
     {
-        //Eigenschaft für das Attribut Resultat
+        //Eigenschaft für das Attribut resultat
         public double Resultat { get; private set; }
         
         //Konstruktur für das Objekt RechnerModel
