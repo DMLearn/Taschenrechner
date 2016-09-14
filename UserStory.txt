@@ -1,13 +1,51 @@
 User Story für den Taschenrechner:
-----------------------------------
-----------------------------------
+(User Story Vorlage: Als <Rolle/Anwendertyp> möchte ich  <Ziel/Wunsch/Funktion>, um <Nutzen>.)
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
 
-User Story Vorlage: Als <Rolle/Anwendertyp> möchte ich  <Ziel/Wunsch/Funktion>, um <Nutzen>.
  
+ Titel: Beenden
+ --------------
+ Story: Als Benutzer möchte ich "Fertig" anstelle einer Zahl eingeben, um den Taschenrechner zu beenden.
+
+ Akzeptanzkriterium:
+• Taschenrechner wird beendet, sobald "Fertig" (in dieser Schreibweise) eingegeben wird.
+• Es gibt einen entsprechenden Hinweis, dass der Benutzer weiß mit welchen Kommando er den Taschenrechner beenden kann.
+
+Status:
+• offen
+
+
+Titel: Forlaufende Berechnung
+----------------
+Story: Als Benutzer möchte ich eine weitere Zahl eingeben, um die vorherige Operation nochmals auszuführen mit dem vorherigen
+Resultat.
+
+Akzeptanzkriterium:
+• Gleitkommazahlen im Bereich von -1000,00 bis 1000,00 können eingegeben werden
+• Die Operation aus der vorherigen Berechnung wird nochmals verwendet
+• Das neue Resultat wird ausgegeben ohne weitere Interaktion mit dem Benutzer
+
+Status:
+• offen
+
+
+Titel: ObjektOrientierung
+----------------
+Story: Als Entwickler möchte ich den Quellcode sauber strukturieren, um später weitere Funktionalitäten hinzufügen zu können.
+
+Akzeptanzkriterium:
+• Die Aufteilung der Funktionalitäten auf Klassen folgt dem Prinzip Seperation of Concerns (SoC)
+• Bei der Erstellung der Klassen und Methoden wird das Prinzip Don't Repeat Yourself (DRY) eingehalten
+
+Hinweis: Diese Story ist eine Erweiterung zu Story "Softwareentwicklung"
+
+Status:
+• offen
+
 
  Titel:Softwarestruktur
 ---------------
-
 Story: Als Entwickler möchte ich den Quellcode suaber strukturieren, um später weiter Funktionalitäten 
 hinzufügen zu können.
 
@@ -18,61 +56,61 @@ Status:
 • umgesetzt
 • erledigt
 
+
 Titel: Dividieren
 ---------------
-
 Story: Als Benutzer möchte ich zwei Zahlen eingeben und deren Quotient berechnen lassen.
 
 Akzeptanzkriterien: 
-• Zahlen im Bereich von -1000,00 bis 1000,00 können subtrahiert werden 
+• Gleitkommazahlen im Bereich von -1000,00 bis 1000,00 können subtrahiert werden 
 
 Status: 
 • implementiert
 • getestet
 • erledigt
+
 
 Titel: Multiplizieren
 ---------------
-
 Story: Als Benutzer möchte ich zwei Zahlen eingeben und deren Produkt berechnen lassen.
 
 Akzeptanzkriterien: 
-• Zahlen im Bereich von -1000,00 bis 1000,00 können subtrahiert werden 
+• Gleitkommazahlen im Bereich von -1000,00 bis 1000,00 können subtrahiert werden 
 
 Status: 
 • implementiert
 • getestet
 • erledigt
+
 
 Titel: Subtrahieren
 ---------------
-
 Story: Als Benutzer möchte ich zwei Zahlen eingeben und deren Differenz berechnen lassen.
 
 Akzeptanzkriterien: 
-• Zahlen im Bereich von -1000,00 bis 1000,00 können subtrahiert werden 
+• Gleitkommazahlen im Bereich von -1000,00 bis 1000,00 können subtrahiert werden 
 
 Status: 
 • implementiert
 • getestet
 • erledigt
+
 
 Titel: Addieren 
 ---------------
-
 Story: Als Benutzer möchte ich zwei Zahlen eingeben und deren Summanden berechnen lassen.
 
 Akzeptanzkriterien: 
-• Zahlen im Bereich von -1000,00 bis 1000,00 können addiert werden 
+• Gleitkommazahlen im Bereich von -1000,00 bis 1000,00 können addiert werden 
 
 Status: 
 • implementiert
 • getestet
 • erledigt
 
+
 Titel: Starten
 --------------
-
 Story: Als Benutzer möchte ich, dass das Programm schnell startet damit schnell und effizient arbeiten kann.
 
 Akzeptanzkriterien: 
