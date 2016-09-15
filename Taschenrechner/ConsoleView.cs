@@ -17,10 +17,13 @@ namespace Taschenrechner
             this.model = model;
         }
 
-        public string HoleZahlVomBeutzer()
+        public double HoleZahlVomBeutzer()
         {
+            string zahl;
             Console.Write("Bitte gib eine Zahl für die Berechnung ein: ");
-            return Console.ReadLine();
+            zahl = Console.ReadLine();
+
+            return Convert.ToDouble(zahl);
         }
 
         public string HoleOperatorVomBeutzer()

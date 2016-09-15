@@ -21,16 +21,12 @@ namespace Taschenrechner
         public void Ausfuehren()
         {
             //Abfrage der jeweiligen Zahlen und der Operation durch die Klassen
-            string ersteZahlAlsString = view.HoleZahlVomBeutzer();
+            double ersteZahl = view.HoleZahlVomBeutzer();
             string operation = view.HoleOperatorVomBeutzer();
-            string zweiteZahlAlsString = view.HoleZahlVomBeutzer();
-
-            //Wandelt den Text zu Gleitkommazahlen
-            double ersteZahlAlsDouble = Convert.ToDouble(ersteZahlAlsString);
-            double zweiteZahlAlsDouble = Convert.ToDouble(zweiteZahlAlsString);
+            double zweiteZahl = view.HoleZahlVomBeutzer();
 
             //Berechnung ausführen
-            model.Berechne(ersteZahlAlsDouble, zweiteZahlAlsDouble, operation);
+            model.Berechne(ersteZahl, zweiteZahl, operation);
 
             view.GibResultatAus(operation);
             view.WarteAufEndeDurchBenutzer();
