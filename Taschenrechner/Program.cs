@@ -11,7 +11,7 @@ namespace Taschenrechner
         {
             //Objekte für die Klassen von view und model angelegt 
             RechnerModel model = new RechnerModel();
-            ConsoleView view = new ConsoleView();
+            ConsoleView view = new ConsoleView(model);
 
             //Abfrage der jeweiligen Zahlen und der Operation durch die Klassen
             view.HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
@@ -28,11 +28,9 @@ namespace Taschenrechner
             double zweiteZahlAlsDouble = Convert.ToDouble(zweiteZahlAlsString);
 
             //Berechnung ausführen
-
             model.Berechne(ersteZahlAlsDouble, zweiteZahlAlsDouble, operation);
 
-
-            Console.WriteLine("Das Ergebnis aus {0} {3} {1} = {2}", ersteZahlAlsDouble, zweiteZahlAlsDouble, model.Resultat, operation);
+            view.GibResultatAus(operation);
             view.HoleBenutzerEingabe("-------------------------------------\nZum Beenden bitte eine Taste drücken!");
 
         }
