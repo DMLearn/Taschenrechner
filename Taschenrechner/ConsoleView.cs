@@ -17,27 +17,24 @@ namespace Taschenrechner
             this.model = model;
         }
 
-        //Eigenschaft für das Attribut input
-        public string Input { get; private set; }
-
-        //Konstruktur für das Objekt ConsoleView
-        public ConsoleView()
+        public string HoleZahlVomBeutzer()
         {
-            Input = null;
+            Console.Write("Bitte gib eine Zahl für die Berechnung ein: ");
+            return Console.ReadLine();
         }
 
-        /// <summary>
-        /// Eingabeforderung an den Nutzer, Eingabe wird als return zurürck gegeben.
-        /// </summary>
-        /// <param name="ausgabetext"></param>
-        /// <returns></returns>
-        public void HoleBenutzerEingabe(string ausgabetext)
+        public string HoleOperatorVomBeutzer()
         {
-            Console.Write(ausgabetext);
-            Input = Console.ReadLine();
+            Console.Write("Bitte gib die auszuführende Operation ein (+ - * /): ");
+            return Console.ReadLine();
+        }
 
-        }     
-        
+        public string WarteAufEndeDurchBenutzer()
+        {
+            Console.Write("-------------------------------------\nZum Beenden bitte eine Taste drücken!");
+            return Console.ReadLine();
+        }
+      
         /// <summary>
         /// Ausgabe des Ergebniss
         /// </summary>

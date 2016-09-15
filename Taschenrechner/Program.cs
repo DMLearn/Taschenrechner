@@ -14,14 +14,9 @@ namespace Taschenrechner
             ConsoleView view = new ConsoleView(model);
 
             //Abfrage der jeweiligen Zahlen und der Operation durch die Klassen
-            view.HoleBenutzerEingabe("Bitte gib die erste Zahl ein: ");
-            string ersteZahlAlsString = view.Input;
-
-            view.HoleBenutzerEingabe("Bitte gib die zweite Zahl ein: ");
-            string zweiteZahlAlsString = view.Input;
-
-            view.HoleBenutzerEingabe("Bitte gib die Operation ein (+ - * /): ");
-            string operation = view.Input;
+            string ersteZahlAlsString = view.HoleZahlVomBeutzer();
+            string operation = view.HoleOperatorVomBeutzer();
+            string zweiteZahlAlsString = view.HoleZahlVomBeutzer();
 
             //Wandelt den Text zu Gleitkommazahlen
             double ersteZahlAlsDouble = Convert.ToDouble(ersteZahlAlsString);
@@ -31,7 +26,7 @@ namespace Taschenrechner
             model.Berechne(ersteZahlAlsDouble, zweiteZahlAlsDouble, operation);
 
             view.GibResultatAus(operation);
-            view.HoleBenutzerEingabe("-------------------------------------\nZum Beenden bitte eine Taste drücken!");
+            view.WarteAufEndeDurchBenutzer();
 
         }
     }
