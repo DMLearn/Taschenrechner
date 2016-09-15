@@ -10,11 +10,13 @@ namespace Taschenrechner
     {
         //Eigenschaft für das Attribut resultat
         public double Resultat { get; private set; }
-        
+        public string Operation { get; private set; }
+
         //Konstruktur für das Objekt RechnerModel
         public RechnerModel()
         {
             Resultat = 0;
+            Operation = "unbekannt";
         }
 
 
@@ -27,6 +29,8 @@ namespace Taschenrechner
         /// <returns></returns>
         public void Berechne(double erste_zahl, double zweite_zahl, string operation)
         {
+            this.Operation = operation;
+
             switch (operation)
             {
                 case "+":

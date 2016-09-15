@@ -43,9 +43,9 @@ namespace Taschenrechner
         /// </summary>
         /// <param name="resultat"></param>
         /// <param name="operation"></param>
-        public void GibResultatAus(string operation)
+        public void GibResultatAus()
         {
-            switch (operation)
+            switch (model.Operation)
             {
                 case "+":
                     Console.WriteLine("Die Summe ist: {0}", model.Resultat);
