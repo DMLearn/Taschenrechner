@@ -41,7 +41,9 @@ Akzeptanzkriterium:
 Hinweis: Diese Story ist eine Erweiterung zu Story "Softwareentwicklung"
 
 Status:
-• offen
+• implementiert
+• getestet
+• erledigt
 
 
  Titel:Softwarestruktur
