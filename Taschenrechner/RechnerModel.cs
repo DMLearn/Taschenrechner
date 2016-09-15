@@ -10,7 +10,9 @@ namespace Taschenrechner
     {
         //Eigenschaft für das Attribut resultat
         public double Resultat { get; private set; }
-        public string Operation { get; private set; }
+        public string Operation { get; set; }
+        public double ErsteZahl { get; set; }
+        public double ZweiteZahl { get; set; }
 
         //Konstruktur für das Objekt RechnerModel
         public RechnerModel()
@@ -27,23 +29,22 @@ namespace Taschenrechner
         /// <param name="zweite_zahl"></param>
         /// <param name="operation"></param>
         /// <returns></returns>
-        public void Berechne(double erste_zahl, double zweite_zahl, string operation)
+        public void Berechne()
         {
-            this.Operation = operation;
 
-            switch (operation)
+            switch (Operation)
             {
                 case "+":
-                    Resultat = AddierenZweierZahlen(erste_zahl, zweite_zahl);
+                    Resultat = AddierenZweierZahlen(ErsteZahl, ZweiteZahl);
                     break;
                 case "-":
-                    Resultat = SubtrahierenZweierZahlen(erste_zahl, zweite_zahl);
+                    Resultat = SubtrahierenZweierZahlen( ErsteZahl, ZweiteZahl );
                     break;
                 case "*":
-                    Resultat = MultiplizierenZweierZahlen(erste_zahl, zweite_zahl);
+                    Resultat = MultiplizierenZweierZahlen( ErsteZahl, ZweiteZahl );
                     break;
                 case "/":
-                    Resultat = DividierenZweierZahlen(erste_zahl, zweite_zahl);
+                    Resultat = DividierenZweierZahlen( ErsteZahl, ZweiteZahl );
                     break;
                 default:
                     Resultat = 0;
