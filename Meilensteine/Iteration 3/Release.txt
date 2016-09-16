@@ -4,7 +4,6 @@ User Story für den Taschenrechner:
 ----------------------------------------------------------------------------------------------
 
  
-
  Titel: Beenden
  --------------
  Story: Als Benutzer möchte ich "Fertig" anstelle einer Zahl eingeben, um den Taschenrechner zu beenden.
