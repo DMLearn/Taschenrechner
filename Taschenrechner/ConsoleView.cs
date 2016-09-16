@@ -15,36 +15,60 @@ namespace Taschenrechner
         public ConsoleView(RechnerModel model)
         {
             this.model = model;
+            BenutzerWillBeenden = false;
         }
 
-        public void HoleEingabenVomBenutzer()
+        public bool BenutzerWillBeenden { get; private set; }
+
+        public void HoleEingabenFuerErsteBerechnungVomNutzer()
         {
             model.ErsteZahl = HoleZahlVomBeutzer();
             model.Operation = HoleOperatorVomBeutzer();
             model.ZweiteZahl = HoleZahlVomBeutzer();
         }
 
+        public void HoleEingabenFuerForlaufendeBerechnungVomNutzer()
+        {
+            string eingabe = HoleNaechsteAktionVomNutzer();
+
+            if (eingabe == "FERTIG")
+            {
+                BenutzerWillBeenden = true;
+            }
+            else
+            {
+                model.ErsteZahl = model.Resultat;
+                model.ZweiteZahl = Convert.ToDouble(eingabe);
+            }
+        }
+
+        private string HoleNaechsteAktionVomNutzer()
+        {
+            Console.Write( "Bitte gib eine weitere Zahl ein (FERTIG zum Beenden): " );
+            return Console.ReadLine();
+        }
+
         private double HoleZahlVomBeutzer()
         {
-            string zahl;
-            Console.Write("Bitte gib eine Zahl für die Berechnung ein: ");
-            zahl = Console.ReadLine();
+            string eingabe;
+            Console.Write("Bitte gib eine Zahl für die Berechnung ein (FERTIG zum Beenden): ");
+            eingabe = Console.ReadLine();
 
-            return Convert.ToDouble(zahl);
+            if (eingabe == "FERTIG")
+            {
+                BenutzerWillBeenden = true;
+                eingabe = "0,0";
+            }
+
+            return Convert.ToDouble(eingabe);
         }
 
         private string HoleOperatorVomBeutzer()
         {
-            Console.Write("Bitte gib die auszuführende Operation ein (+ - * /): ");
+            Console.Write( "Bitte gib die auszuführende Operation ein +,-,*,/ (FERTIG zum Beenden): " );
             return Console.ReadLine();
         }
-
-        public string WarteAufEndeDurchBenutzer()
-        {
-            Console.Write("-------------------------------------\nZum Beenden bitte eine Taste drücken!");
-            return Console.ReadLine();
-        }
-      
+     
         /// <summary>
         /// Ausgabe des Ergebniss
         /// </summary>
