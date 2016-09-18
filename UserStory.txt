@@ -3,6 +3,16 @@ User Story für den Taschenrechner:
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
 
+ Titel: Validieren der Eingabe
+ --------------
+ Story: Als Benutzer möchte ich sofort erkennen ob eine Eingabe gültig ist, um den Taschenrechner schnell und einfach bedienen zu können.
+
+ Akzeptanzkriterium:
+• Eine fehlerhafte Eingabe wird nach dem betätigen von Return angezeigt.
+• Der Benutzer bekommt Hinweise wie er Zahlen, Operationen und Kommandos richtig eingeben kann.
+
+Status:
+• offen
  
 
  Titel: Beenden
