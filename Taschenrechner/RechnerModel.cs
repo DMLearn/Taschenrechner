@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Taschenrechner
 {
-    class RechnerModel
+    public class RechnerModel
     {
         //Eigenschaft für das Attribut resultat
         public double Resultat { get; private set; }
