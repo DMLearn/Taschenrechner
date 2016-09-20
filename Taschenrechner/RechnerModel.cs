@@ -13,11 +13,17 @@ namespace Taschenrechner
         public string Operation { get; set; }
         public double ErsteZahl { get; set; }
         public double ZweiteZahl { get; set; }
+        public double MaximalerEingabeWert { get; private set; }
+        public double MinimalerEingabeWert { get; private set; }
+        public bool WerteBereichUeberlauf { get; private set; }
 
         //Konstruktur für das Objekt RechnerModel
         public RechnerModel()
         {
             Resultat = 0;
+            MaximalerEingabeWert = 1000.00;
+            MinimalerEingabeWert = -1000.0;
+            WerteBereichUeberlauf = false;
             Operation = "unbekannt";
         }
 
@@ -31,7 +37,7 @@ namespace Taschenrechner
         /// <returns></returns>
         public void Berechne()
         {
-
+            
             switch (Operation)
             {
                 case "+":
@@ -98,6 +104,20 @@ namespace Taschenrechner
         {
             double quotient = erste_zahl / zweite_zahl;
             return quotient;
+        }
+
+        /// <summary>
+        /// Methode überprüft ob die eingegebene Zahl im zulässigen Bereich liegt
+        /// </summary>
+        /// <param name="zahl"></param>
+        public void ZahlenUeberlaufPruefen(double zahl)
+        {
+            if (zahl > MaximalerEingabeWert || zahl < MinimalerEingabeWert)
+            {
+                WerteBereichUeberlauf = true;
+            }
+            else
+                WerteBereichUeberlauf = false;
         }
 
     }

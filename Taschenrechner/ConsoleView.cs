@@ -22,9 +22,27 @@ namespace Taschenrechner
 
         public void HoleEingabenFuerErsteBerechnungVomNutzer()
         {
+
             model.ErsteZahl = HoleZahlVomBeutzer();
+            ZahleneingabeAufUeberlaufPruefen(model.ErsteZahl);
+
+            while (model.WerteBereichUeberlauf == true)
+            {
+                model.ErsteZahl = HoleZahlVomBeutzer();
+                ZahleneingabeAufUeberlaufPruefen(model.ErsteZahl);
+            }
+
             model.Operation = HoleOperatorVomBeutzer();
+
             model.ZweiteZahl = HoleZahlVomBeutzer();
+            ZahleneingabeAufUeberlaufPruefen(model.ZweiteZahl);
+
+            while (model.WerteBereichUeberlauf == true)
+            {
+                model.ZweiteZahl = HoleZahlVomBeutzer();
+                ZahleneingabeAufUeberlaufPruefen(model.ZweiteZahl);
+            }
+
         }
 
         public void HoleEingabenFuerForlaufendeBerechnungVomNutzer()
@@ -75,6 +93,24 @@ namespace Taschenrechner
         {
             Console.Write( "Bitte gib die auszuführende Operation ein +,-,*,/ (FERTIG zum Beenden): " );
             return Console.ReadLine();
+        }
+
+        /// <summary>
+        /// Überprüfen ob die Zahl im zulässigen Bereich liegt. Gibt bei Bedarf einen Fehler an den Nutzer aus. 
+        /// </summary>
+        /// <param name="zahl"></param>
+        private void ZahleneingabeAufUeberlaufPruefen(double zahl)
+        {
+            model.ZahlenUeberlaufPruefen(zahl);
+
+            if (model.WerteBereichUeberlauf == true)
+            {
+                Console.WriteLine("--------------------");
+                Console.WriteLine("Die eingebene Zahl ist außerhalb des zulässigen Bereichs.");
+                Console.WriteLine("Es sind Zahlen im Bereich von {0} bis {1} erlaubt.", model.MinimalerEingabeWert, model.MaximalerEingabeWert);
+                Console.WriteLine("--------------------");
+            }
+
         }
      
         /// <summary>
