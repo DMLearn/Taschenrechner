@@ -22,26 +22,19 @@ namespace Taschenrechner
 
         public void HoleEingabenFuerErsteBerechnungVomNutzer()
         {
-
-            model.ErsteZahl = HoleZahlVomBeutzer();
-            ZahleneingabeAufUeberlaufPruefen(model.ErsteZahl);
-
-            while (model.WerteBereichUeberlauf == true)
+            do
             {
                 model.ErsteZahl = HoleZahlVomBeutzer();
                 ZahleneingabeAufUeberlaufPruefen(model.ErsteZahl);
-            }
+            } while (model.WerteBereichUeberlauf);
 
             model.Operation = HoleOperatorVomBeutzer();
 
-            model.ZweiteZahl = HoleZahlVomBeutzer();
-            ZahleneingabeAufUeberlaufPruefen(model.ZweiteZahl);
-
-            while (model.WerteBereichUeberlauf == true)
+            do
             {
                 model.ZweiteZahl = HoleZahlVomBeutzer();
                 ZahleneingabeAufUeberlaufPruefen(model.ZweiteZahl);
-            }
+            } while (model.WerteBereichUeberlauf);
 
         }
 
